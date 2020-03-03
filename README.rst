@@ -25,6 +25,7 @@ In a simplified ``buildout.cfg``::
 
     [zodbupdate]
     recipe = zc.recipe.egg
+    scripts = zodbupdate
     eggs =
         zodbupdate
         zest.zodbupdate
