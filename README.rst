@@ -87,7 +87,16 @@ See https://github.com/zopefoundation/zodbupdate#pre-defined-rename-rules
 The current package defines such an entrypoint.
 
 Here is the rename dictionary from the `master branch <https://github.com/zestsoftware/zest.zodbupdate/blob/master/src/zest/zodbupdate/renames.py>`_.
+The warnings and exceptions mentioned above are handled here.
 Each version of this package may have different contents.
+
+Note that I have seen several warnings that are not handled but that seem innocent.
+I choose to ignore them.
+These are some warnings because of a missing ``webdav`` (removed in Zope 4.0, reintroduced in 4.3)::
+
+    Warning: Missing factory for webdav.interfaces IDAVResource
+    Warning: Missing factory for webdav.interfaces IFTPAccess
+    Warning: Missing factory for webdav.interfaces IDAVCollection
 
 
 Dynamic dexterity schemas
