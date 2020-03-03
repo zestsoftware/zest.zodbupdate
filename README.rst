@@ -30,6 +30,8 @@ In a simplified ``buildout.cfg``::
         zest.zodbupdate
         ${instance:eggs}
 
+Run ``bin/buildout`` and then ``bin/zodbupdate -f var/filestorage/Data.fs``.
+
 
 Use case and process
 --------------------
@@ -83,6 +85,9 @@ Maybe there are better ways to clean these up, but so far so good.
 You fix these with renames in an entrypoint using zodbupdate.
 See https://github.com/zopefoundation/zodbupdate#pre-defined-rename-rules
 The current package defines such an entrypoint.
+
+Here is the rename dictionary from the `master branch <https://github.com/zestsoftware/zest.zodbupdate/blob/master/src/zest/zodbupdate/renames.py>`_.
+Each version of this package may have different contents.
 
 
 Dynamic dexterity schemas
