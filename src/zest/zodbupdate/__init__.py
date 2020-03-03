@@ -15,11 +15,3 @@ else:
     sm.registerUtility(
         factory=SchemaModuleFactory, name="plone.dexterity.schema.generated"
     )
-
-
-# The zodbupdate rename dictionary, read by an entrypoint:
-rename_dict = {
-    "App.interfaces IPersistentExtra": "zope.interface Interface",
-    "App.interfaces IUndoSupport": "zope.interface Interface",
-    "Products.ResourceRegistries.interfaces.settings IResourceRegistriesSettings": "zope.interface Interface",
-}
