@@ -7,6 +7,30 @@ See `post on community.plone.org <https://community.plone.org/t/zodbverify-porti
 And the `Plone ZODB Python 3 migration docs <https://docs.plone.org/manage/upgrading/version_specific_migration/upgrade_zodb_to_python3.html>`_.
 
 
+Quick usage
+-----------
+
+In a simplified ``buildout.cfg``::
+
+    [buildout]
+    parts =
+        instance
+        zodbupdate
+
+    [instance]
+    recipe = plone.recipe.zope2instance
+    eggs =
+        Plone
+        zodbverify
+
+    [zodbupdate]
+    recipe = zc.recipe.egg
+    eggs =
+        zodbupdate
+        zest.zodbupdate
+        ${instance:eggs}
+
+
 Use case and process
 --------------------
 
