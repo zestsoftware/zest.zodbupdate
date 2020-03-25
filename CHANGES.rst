@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0b2 (unreleased)
+1.0.0b2 (2020-03-25)
 --------------------
 
 - Add renames for a few webdav interfaces.
