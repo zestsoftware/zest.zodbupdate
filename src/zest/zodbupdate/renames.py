@@ -14,6 +14,8 @@ try:
 except ImportError:
     # IFTPAccess is not there anyway in the new webdav:
     rename_dict["webdav.interfaces IFTPAccess"] = iface
+    rename_dict["OFS.interfaces IFTPAccess"] = iface
+
     # The next two inherit from IWriteLock, so seems a logical replacement,
     # but that is only available since Zope 4.
     try:
@@ -28,3 +30,13 @@ except ImportError:
             "webdav.interfaces IDAVResource": writelock,
         }
     )
+else:
+    # webdav is back in Zope 4.3.
+    # See https://github.com/zestsoftware/zest.zodbupdate/issues/1
+    try:
+        from OFS.EtagSupport import EtagBaseInterface
+        rename_dict["webdav.EtagSupport EtagBaseInterface"] = "OFS.EtagSupport EtagBaseInterface"
+    except ImportError:
+        rename_dict["webdav.EtagSupport EtagBaseInterface"] = iface
+    # IFTPAccess is back in webdav.
+    rename_dict["OFS.interfaces IFTPAccess"] = "webdav.interfaces IFTPAccess"
