@@ -3,7 +3,7 @@ from setuptools import setup
 
 
 setup(
-    version="1.0.0b3.dev0",
+    version="1.0.0",
     # thanks to this bug on Python 2.7
     # https://github.com/pypa/setuptools/issues/1136
     # we need one line in here.
