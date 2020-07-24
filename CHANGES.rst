@@ -5,7 +5,9 @@ Changelog
 1.0.0b3 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Handle the return of webdav in Zope 4.3, especially ``IFTPAccess`` and ``EtagBaseInterface``.
+  Fixes `issue #1 <https://github.com/zestsoftware/zest.zodbupdate/issues/1>`_.
+  [maurits]
 
 
 1.0.0b2 (2020-03-25)
