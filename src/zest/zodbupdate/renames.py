@@ -39,4 +39,11 @@ else:
     except ImportError:
         rename_dict["webdav.EtagSupport EtagBaseInterface"] = iface
     # IFTPAccess is back in webdav.
-    rename_dict["OFS.interfaces IFTPAccess"] = "webdav.interfaces IFTPAccess"
+    # Well, that depends on wheter you have webdav from Zope or from ZServer...
+    # See https://github.com/zestsoftware/zest.zodbupdate/pull/2#issuecomment-663647294
+    try:
+        from webdav.interfaces import IFTPAccess
+        rename_dict["OFS.interfaces IFTPAccess"] = "webdav.interfaces IFTPAccess"
+    except ImportError:
+        rename_dict["OFS.interfaces IFTPAccess"] = iface
+        rename_dict["webdav.interfaces IFTPAccess"] = iface
