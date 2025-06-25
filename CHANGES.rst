@@ -5,6 +5,8 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
+- Use `importlib.metadata` instead of `pkg_resources`.  [maurits]
+
 - Add renames for Plone 6.0 and 6.1 for the following interfaces:
   - `plone.restapi.behaviors.ITiles`
   - `collective.dexteritytextindexer.behavior.IDexterityTextIndexer`

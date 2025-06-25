@@ -1,8 +1,10 @@
-import pkg_resources
+from importlib.metadata import distribution
+from importlib.metadata import PackageNotFoundError
+
 
 try:
-    pkg_resources.get_distribution("plone.dexterity")
-except pkg_resources.DistributionNotFound:
+    distribution("plone.dexterity")
+except PackageNotFoundError:
     # No plone.dexterity available.
     pass
 else:
