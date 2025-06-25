@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.0 (unreleased)
+2.0.0 (2025-06-25)
 ------------------
 
 - Use `importlib.metadata` instead of `pkg_resources`.  [maurits]
