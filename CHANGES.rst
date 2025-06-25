@@ -10,6 +10,7 @@ Changelog
 - Add renames for Plone 6.0 and 6.1 for the following interfaces:
   - `plone.restapi.behaviors.ITiles`
   - `collective.dexteritytextindexer.behavior.IDexterityTextIndexer`
+  - `plone.base.interfaces.controlpanel.ITinyMCESpellCheckerSchema`
   - `plone.app.discussion.behaviors.IAllowDiscussion`
   - `plone.app.dexterity.behaviors.discussion.IAllowDiscussion`
   [maurits]
