@@ -5,8 +5,6 @@ rename_dict = {
     "Products.ResourceRegistries.interfaces.settings IResourceRegistriesSettings": iface,
     "plone.restapi.behaviors ITiles": "plone.restapi.behaviors IBlocks",
     "collective.dexteritytextindexer.behavior IDexterityTextIndexer": "plone.app.dexterity.textindexer.behavior IDexterityTextIndexer",
-    "plone.app.discussion.behaviors IAllowDiscussion": "plone.app.discussion.behavior IAllowDiscussion",
-    "plone.app.dexterity.behaviors.discussion IAllowDiscussion": "plone.app.discussion.behavior IAllowDiscussion",
 }
 
 try:
@@ -15,3 +13,15 @@ try:
 except ImportError:
     # This interface was removed in Plone 6.1.
     rename_dict["plone.base.interfaces.controlpanel ITinyMCESpellCheckerSchema"] = iface
+
+try:
+    from plone.app.discussion.behavior import IAllowDiscussion
+except ImportError:
+    # The behavior module is only there in Plone 6.1,
+    # and only if plone.app.discussion is actually included.
+    pass
+else:
+    # So only here can we add the rename.
+    allow_discussion = "plone.app.discussion.behavior IAllowDiscussion"
+    rename_dict["plone.app.discussion.behaviors IAllowDiscussion"] = allow_discussion
+    rename_dict["plone.app.dexterity.behaviors.discussion IAllowDiscussion"] = allow_discussion

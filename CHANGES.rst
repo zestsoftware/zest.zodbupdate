@@ -7,12 +7,15 @@ Changelog
 
 - Use `importlib.metadata` instead of `pkg_resources`.  [maurits]
 
-- Add renames for Plone 6.0 and 6.1 for the following interfaces:
-  - `plone.restapi.behaviors.ITiles`
-  - `collective.dexteritytextindexer.behavior.IDexterityTextIndexer`
+- Add renames for Plone 6.1 and higher for the following interfaces:
   - `plone.base.interfaces.controlpanel.ITinyMCESpellCheckerSchema`
   - `plone.app.discussion.behaviors.IAllowDiscussion`
   - `plone.app.dexterity.behaviors.discussion.IAllowDiscussion`
+  [maurits]
+
+- Add renames for Plone 6.0 and higher for the following interfaces:
+  - `plone.restapi.behaviors.ITiles`
+  - `collective.dexteritytextindexer.behavior.IDexterityTextIndexer`
   [maurits]
 
 - Remove the "webdav" renames.  This should be only needed on Plone 5.2.
