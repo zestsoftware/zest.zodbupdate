@@ -5,6 +5,8 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
+- Use native namespaces.  [maurits]
+
 - Support only Plone 6, require Python 3.9 or higher.  [maurits]
 
 
