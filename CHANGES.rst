@@ -2,10 +2,10 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+2.0.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Support only Plone 6, require Python 3.9 or higher.  [maurits]
 
 
 1.0.0 (2020-07-24)

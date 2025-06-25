@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 iface = "zope.interface Interface"
 rename_dict = {
     "App.interfaces IPersistentExtra": iface,
