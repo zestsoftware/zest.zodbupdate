@@ -5,6 +5,13 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
+- Add renames for Plone 6.0 and 6.1 for the following interfaces:
+  - `plone.restapi.behaviors.ITiles`
+  - `collective.dexteritytextindexer.behavior.IDexterityTextIndexer`
+  - `plone.app.discussion.behaviors.IAllowDiscussion`
+  - `plone.app.dexterity.behaviors.discussion.IAllowDiscussion`
+  [maurits]
+
 - Remove the "webdav" renames.  This should be only needed on Plone 5.2.
   You should have used `zest.zodbupdate` 1.0.0 already there.
   [maurits]
