@@ -4,7 +4,7 @@ zest.zodbupdate
 zodbupdate rename dictionary and dexterity patch for Plone 6 projects.
 
 See `post on community.plone.org <https://community.plone.org/t/zodbverify-porting-plone-with-zopedb-to-python3/8806/13>`_.
-And the `Plone ZODB Python 3 migration docs <https://docs.plone.org/manage/upgrading/version_specific_migration/upgrade_zodb_to_python3.html>`_.
+And the `Plone ZODB Python 3 migration docs <https://5.docs.plone.org/manage/upgrading/version_specific_migration/upgrade_zodb_to_python3.html>`_.
 
 
 Compatibility
