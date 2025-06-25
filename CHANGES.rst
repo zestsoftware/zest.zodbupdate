@@ -2,10 +2,29 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+2.0.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use `importlib.metadata` instead of `pkg_resources`.  [maurits]
+
+- Add renames for Plone 6.1 and higher for the following interfaces:
+  - `plone.base.interfaces.controlpanel.ITinyMCESpellCheckerSchema`
+  - `plone.app.discussion.behaviors.IAllowDiscussion`
+  - `plone.app.dexterity.behaviors.discussion.IAllowDiscussion`
+  [maurits]
+
+- Add renames for Plone 6.0 and higher for the following interfaces:
+  - `plone.restapi.behaviors.ITiles`
+  - `collective.dexteritytextindexer.behavior.IDexterityTextIndexer`
+  [maurits]
+
+- Remove the "webdav" renames.  This should be only needed on Plone 5.2.
+  You should have used `zest.zodbupdate` 1.0.0 already there.
+  [maurits]
+
+- Use native namespaces.  [maurits]
+
+- Support only Plone 6, require Python 3.9 or higher.  [maurits]
 
 
 1.0.0 (2020-07-24)

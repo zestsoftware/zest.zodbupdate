@@ -1,49 +1,27 @@
-# -*- coding: utf-8 -*-
 iface = "zope.interface Interface"
 rename_dict = {
     "App.interfaces IPersistentExtra": iface,
     "App.interfaces IUndoSupport": iface,
     "Products.ResourceRegistries.interfaces.settings IResourceRegistriesSettings": iface,
+    "plone.restapi.behaviors ITiles": "plone.restapi.behaviors IBlocks",
+    "collective.dexteritytextindexer.behavior IDexterityTextIndexer": "plone.app.dexterity.textindexer.behavior IDexterityTextIndexer",
 }
-# I have seen zodbverify on Python 2 complain with a warning about various webdav.interfaces factories.
-# Might be okay to keep them, because webdav will return in Zope 4.3.
-# But for zodbverify on Python 3 it is a real error, even though the instance starts fine.
-# It may be wise to rename them after all.
+
 try:
-    import webdav
+    # `Warning: Missing factory for plone.base.interfaces.controlpanel ITinyMCESpellCheckerSchema`
+    from plone.base.interfaces.controlpanel import ITinyMCESpellCheckerSchema
 except ImportError:
-    # IFTPAccess is not there anyway in the new webdav:
-    rename_dict["webdav.interfaces IFTPAccess"] = iface
-    rename_dict["OFS.interfaces IFTPAccess"] = iface
+    # This interface was removed in Plone 6.1.
+    rename_dict["plone.base.interfaces.controlpanel ITinyMCESpellCheckerSchema"] = iface
 
-    # The next two inherit from IWriteLock, so seems a logical replacement,
-    # but that is only available since Zope 4.
-    try:
-        from OFS.interfaces import IWriteLock
-
-        writelock = "OFS.interfaces IWriteLock"
-    except ImportError:
-        writelock = iface
-    rename_dict.update(
-        {
-            "webdav.interfaces IDAVCollection": writelock,
-            "webdav.interfaces IDAVResource": writelock,
-        }
-    )
+try:
+    from plone.app.discussion.behavior import IAllowDiscussion
+except ImportError:
+    # The behavior module is only there in Plone 6.1,
+    # and only if plone.app.discussion is actually included.
+    pass
 else:
-    # webdav is back in Zope 4.3.
-    # See https://github.com/zestsoftware/zest.zodbupdate/issues/1
-    try:
-        from OFS.EtagSupport import EtagBaseInterface
-        rename_dict["webdav.EtagSupport EtagBaseInterface"] = "OFS.EtagSupport EtagBaseInterface"
-    except ImportError:
-        rename_dict["webdav.EtagSupport EtagBaseInterface"] = iface
-    # IFTPAccess is back in webdav.
-    # Well, that depends on wheter you have webdav from Zope or from ZServer...
-    # See https://github.com/zestsoftware/zest.zodbupdate/pull/2#issuecomment-663647294
-    try:
-        from webdav.interfaces import IFTPAccess
-        rename_dict["OFS.interfaces IFTPAccess"] = "webdav.interfaces IFTPAccess"
-    except ImportError:
-        rename_dict["OFS.interfaces IFTPAccess"] = iface
-        rename_dict["webdav.interfaces IFTPAccess"] = iface
+    # So only here can we add the rename.
+    allow_discussion = "plone.app.discussion.behavior IAllowDiscussion"
+    rename_dict["plone.app.discussion.behaviors IAllowDiscussion"] = allow_discussion
+    rename_dict["plone.app.dexterity.behaviors.discussion IAllowDiscussion"] = allow_discussion
