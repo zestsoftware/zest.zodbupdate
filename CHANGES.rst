@@ -5,6 +5,10 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
+- Remove the "webdav" renames.  This should be only needed on Plone 5.2.
+  You should have used `zest.zodbupdate` 1.0.0 already there.
+  [maurits]
+
 - Use native namespaces.  [maurits]
 
 - Support only Plone 6, require Python 3.9 or higher.  [maurits]
